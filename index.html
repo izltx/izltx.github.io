@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abdulaziz Alsidrani — Cybersecurity Analyst Portfolio</title>
+  <meta name="description"
+    content="Abdulaziz Alsidrani — Cybersecurity Analyst specializing in SOC, SIEM, MITRE ATT&CK, Incident Response, Threat Hunting, Splunk, Vulnerability Management, Log Analysis, and Python Security Automation.">
+  <meta name="keywords"
+    content="Cybersecurity Analyst, SOC, SIEM, MITRE ATT&CK, Incident Response, Threat Hunting, Splunk, Vulnerability Management, Log Analysis, Python Security Automation, Blue Team, CompTIA Security+, Penetration Testing, Ethical Hacking">
+  <meta name="author" content="Abdulaziz Alsidrani">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Abdulaziz Alsidrani — Cybersecurity Analyst">
+  <meta property="og:description"
+    content="Cybersecurity Analyst (CompTIA Security+) specializing in Defensive Operations and Vulnerability Management.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="og-image.png">
+  <meta property="og:url" content="https://izltx.github.io">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Abdulaziz Alsidrani — Cybersecurity Analyst">
+  <meta name="twitter:description"
+    content="Cybersecurity Analyst (CompTIA Security+) specializing in Defensive Operations and Vulnerability Management.">
+  <meta name="twitter:image" content="og-image.png">
+  <meta name="robots" content="index, follow">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-spinner"></div>
+    <div class="preloader-text">Loading</div>
+  </div>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Cursor Glow -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- Background Effects -->
+  <div class="bg-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+  <div class="noise-overlay"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <a href="#hero" class="nav-logo">AZ.</a>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-hamburger" id="navHamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-badge reveal">
+        <span class="pulse"></span>
+        Open to Opportunities
+      </div>
+      <h1 class="hero-name reveal reveal-delay-1" id="heroName"></h1>
+      <div class="hero-terminal reveal reveal-delay-2" id="heroTerminal">
+        <div class="terminal-header">
+          <div class="terminal-dot red"></div>
+          <div class="terminal-dot yellow"></div>
+          <div class="terminal-dot green"></div>
+        </div>
+        <div id="terminalContent"></div>
+      </div>
+      <div class="hero-cta reveal reveal-delay-3">
+        <a href="#projects" class="btn btn-primary magnetic" id="ctaProjects">
+          <span>View Projects</span>
+          <span>→</span>
+        </a>
+        <a href="#contact" class="btn btn-secondary magnetic" id="ctaContact">
+          <span>Get in Touch</span>
+        </a>
+      </div>
+      <div class="hero-stats reveal reveal-delay-4" id="heroStats"></div>
+    </div>
+  </section>
+
+  <!-- Logo Marquee -->
+  <div class="marquee-section">
+    <div class="marquee-track" id="marqueeTrack"></div>
+  </div>
+
+  <!-- About Section -->
+  <section class="section" id="about">
+    <div class="section-label reveal">About Me</div>
+    <h2 class="section-title reveal reveal-delay-1">Get to Know Me</h2>
+    <div class="about-grid">
+      <div class="about-text reveal reveal-delay-2" id="aboutText"></div>
+      <div class="about-cards" id="aboutCards"></div>
+    </div>
+    <div class="coursework-section reveal">
+      <h3 class="coursework-title">Relevant Coursework</h3>
+      <div class="coursework-tags" id="courseworkTags"></div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="section" id="experience">
+    <div class="section-label reveal">Career</div>
+    <h2 class="section-title reveal reveal-delay-1">Professional Experience</h2>
+    <div class="experience-list" id="experienceList"></div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="section" id="skills">
+    <div class="section-label reveal">Expertise</div>
+    <h2 class="section-title reveal reveal-delay-1">Skills & Specializations</h2>
+    <p class="section-subtitle reveal reveal-delay-2">Core competencies across cybersecurity domains</p>
+    <div class="skills-grid" id="skillsGrid"></div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="section" id="projects">
+    <div class="section-label reveal">Portfolio</div>
+    <h2 class="section-title reveal reveal-delay-1">Featured Projects</h2>
+    <p class="section-subtitle reveal reveal-delay-2">Hands-on security tools built to solve real-world challenges</p>
+    <div class="projects-grid" id="projectsGrid"></div>
+  </section>
+
+  <!-- Project Modal -->
+  <div class="modal-overlay" id="projectModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">✕</button>
+      <h3 class="modal-title" id="modalTitle"></h3>
+      <p class="modal-subtitle" id="modalSubtitle"></p>
+      <p class="modal-date" id="modalDate"></p>
+      <ul class="modal-bullets" id="modalBullets"></ul>
+      <div class="modal-techs project-techs" id="modalTechs"></div>
+    </div>
+  </div>
+
+  <!-- Certifications Section -->
+  <section class="section" id="certifications">
+    <div class="section-label reveal">Credentials</div>
+    <h2 class="section-title reveal reveal-delay-1">Certifications & Badges</h2>
+    <p class="section-subtitle reveal reveal-delay-2">Verified professional credentials</p>
+    <div class="certs-grid" id="certsGrid"></div>
+  </section>
+
+  <!-- Certification Roadmap -->
+  <section class="section" id="roadmap">
+    <div class="section-label reveal">Journey</div>
+    <h2 class="section-title reveal reveal-delay-1">Certification Roadmap</h2>
+    <div class="roadmap" id="roadmapTimeline"></div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section" id="contact">
+    <div class="section-label reveal">Connect</div>
+    <h2 class="section-title reveal reveal-delay-1">Let's Work Together</h2>
+    <p class="section-subtitle reveal reveal-delay-2">Feel free to reach out for opportunities or collaboration</p>
+    <div class="contact-grid" id="contactGrid"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Designed & Built by <span>Abdulaziz Alsidrani</span> &copy; 2026</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

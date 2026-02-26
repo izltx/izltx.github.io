@@ -1,0 +1,191 @@
+{
+  "personal": {
+    "name": "Abdulaziz Alsidrani",
+    "title": "Cybersecurity Analyst",
+    "subtitle": "Blue Team Operations | Vulnerability Management",
+    "email": "az.alsidrani@gmail.com",
+    "phone": "+966 552716717",
+    "location": "Riyadh Region, Saudi Arabia",
+    "linkedin": "https://linkedin.com/in/az-alsidrani",
+    "github": "https://izltx.github.io",
+    "website": "https://izltx.github.io",
+    "whatsapp": "https://wa.me/966552716717"
+  },
+  "summary": "Cybersecurity Analyst (CompTIA Security+) specializing in Defensive Operations and Vulnerability Management. Demonstrated capability through hands-on projects to engineer Python-based security tooling for OSINT and malware analysis. Ready to leverage strong technical foundations in log analysis, threat detection, and risk prioritization within a fast-paced environment.",
+  "education": {
+    "degree": "Bachelor's Degree in CyberSecurity",
+    "university": "University of Hafr Albatin",
+    "dates": "08/2022 – 06/2026"
+  },
+  "experience": [
+    {
+      "role": "Cybersecurity Intern",
+      "company": "King Fahad Medical City (KFMC)",
+      "dates": "06/2025 – 08/2025",
+      "location": "Riyadh",
+      "bullets": [
+        "Developed a data-driven web application using HTML, JavaScript, and backend databases to process and manage user inputs.",
+        "Engineered automated data extraction and reporting functionalities, generating structured PDF and Excel outputs for administrative use.",
+        "Configured automated email notification pipelines, gaining practical exposure to web application architecture, data flow, and backend integration."
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "category": "Security Operations (SOC)",
+      "icon": "shield",
+      "tags": ["Threat Detection & Alert Triage", "Log Analysis & Investigation (Splunk)", "Event Correlation Analysis", "MITRE ATT&CK Framework", "Incident Response Lifecycle"]
+    },
+    {
+      "category": "Vulnerability Management",
+      "icon": "search",
+      "tags": ["Vulnerability Assessments", "Risk Prioritization", "CVSS v3/v4 Scoring", "Patch Management Lifecycle", "OpenVAS"]
+    },
+    {
+      "category": "Security Automation & Tooling",
+      "icon": "code",
+      "tags": ["Python Scripting", "API Integration", "OSINT Data Aggregation", "Static Malware Analysis"]
+    },
+    {
+      "category": "Governance & Systems",
+      "icon": "lock",
+      "tags": ["Security Baselines & Hardening", "Linux/Windows Security Internals", "Network Protocols"]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Singularity",
+      "subtitle": "Malware Analysis & Threat Detection Utility",
+      "date": "12/2025",
+      "description": "A Python-based utility for automated static malware analysis, extracting specific IOCs to accelerate initial threat triage.",
+      "bullets": [
+        "Engineered a Python-based utility for automated static malware analysis, extracting specific IOCs (Hashes, PE Headers) to accelerate initial threat triage.",
+        "Streamlined the static analysis process by generating structured threat signatures, significantly reducing the manual effort required to investigate suspicious artifacts."
+      ],
+      "technologies": ["Python", "PE Analysis", "IOC Extraction", "Threat Intelligence"]
+    },
+    {
+      "title": "ArchInt",
+      "subtitle": "Threat Intelligence & OSINT Aggregator",
+      "date": "01/2026",
+      "description": "An automated Python OSINT tool integrating VirusTotal and Shodan APIs to aggregate and structure public threat intelligence.",
+      "bullets": [
+        "Developed an automated Python OSINT tool integrating VirusTotal and Shodan APIs to aggregate and structure public threat intelligence.",
+        "Parsed and formatted raw indicators into structured datasets (e.g., JSON/CSV), providing direct and readable context to support proactive threat hunting."
+      ],
+      "technologies": ["Python", "VirusTotal API", "Shodan API", "OSINT", "JSON/CSV"]
+    },
+    {
+      "title": "InfraFix",
+      "subtitle": "IaC Security Validator & Configuration Auditor",
+      "date": "02/2026",
+      "description": "A Python utility to automatically parse and validate Infrastructure as Code (IaC) configuration files against established security baselines.",
+      "bullets": [
+        "Developed a Python utility to automatically parse and validate Infrastructure as Code (IaC) configuration files against established security baselines.",
+        "Designed the tool to proactively identify common misconfigurations and access control flaws, demonstrating a practical approach to preventative vulnerability management."
+      ],
+      "technologies": ["Python", "IaC", "Security Baselines", "Configuration Auditing"]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "CompTIA Security+",
+      "issuer": "CompTIA",
+      "date": "Feb 2026",
+      "credlyUrl": "https://www.credly.com/badges/77aa062d-ee3f-4a8a-ac33-f14a943a617c/public_url",
+      "color": "#e74c3c"
+    },
+    {
+      "name": "Cybersecurity",
+      "issuer": "IBM SkillsBuild",
+      "date": "Jun 2025",
+      "credlyUrl": "https://www.credly.com/badges/7ab231f5-cce2-4276-8a37-0f49304b37dc",
+      "color": "#3b82f6"
+    },
+    {
+      "name": "Cloud Security",
+      "issuer": "IBM SkillsBuild",
+      "date": "Jun 2025",
+      "credlyUrl": "https://www.credly.com/badges/47aed90a-e9dd-4f9a-b988-228693f51676",
+      "color": "#3b82f6"
+    },
+    {
+      "name": "Governance, Risk & Compliance",
+      "issuer": "IBM SkillsBuild",
+      "date": "Jun 2025",
+      "credlyUrl": "https://www.credly.com/badges/7dc7d974-f240-4b44-ac6d-88c742d4723f",
+      "color": "#3b82f6"
+    },
+    {
+      "name": "Incident Response & Forensics",
+      "issuer": "IBM SkillsBuild",
+      "date": "Jun 2025",
+      "credlyUrl": "https://www.credly.com/badges/77f7843c-7445-4522-b14e-ed654bb27b2e",
+      "color": "#3b82f6"
+    },
+    {
+      "name": "Security Operations",
+      "issuer": "IBM SkillsBuild",
+      "date": "Jun 2025",
+      "credlyUrl": "https://www.credly.com/badges/509eafa0-1a0c-4aef-b919-7f127b94f3b7",
+      "color": "#3b82f6"
+    },
+    {
+      "name": "System & Network Security",
+      "issuer": "IBM SkillsBuild",
+      "date": "Jun 2025",
+      "credlyUrl": "https://www.credly.com/badges/728ee26b-65cd-429d-9a82-89f532d2b761",
+      "color": "#3b82f6"
+    },
+    {
+      "name": "Vulnerability Management",
+      "issuer": "IBM SkillsBuild",
+      "date": "Jun 2025",
+      "credlyUrl": "https://www.credly.com/badges/d21842e0-af27-48c1-9773-8fa30d5912ec",
+      "color": "#3b82f6"
+    },
+    {
+      "name": "AI Concepts & Advanced Applications",
+      "issuer": "SDAIA",
+      "date": "Sep 2025",
+      "credlyUrl": null,
+      "color": "#8b5cf6"
+    },
+    {
+      "name": "Fundamentals of AI",
+      "issuer": "SDAIA",
+      "date": "Sep 2025",
+      "credlyUrl": null,
+      "color": "#8b5cf6"
+    },
+    {
+      "name": "Student Member Engineer",
+      "issuer": "SCE",
+      "date": "Sep 2024",
+      "credlyUrl": null,
+      "color": "#10b981"
+    }
+  ],
+  "languages": [
+    { "name": "English", "level": "Professional Working Proficiency" },
+    { "name": "Arabic", "level": "Native" }
+  ],
+  "stats": {
+    "projects": 3,
+    "certifications": 11,
+    "skillAreas": 4
+  },
+  "coursework": [
+    "Digital Forensics",
+    "Network Security",
+    "Ethical Hacking",
+    "OS Security",
+    "Cryptography",
+    "Computer Networks",
+    "Cloud Security",
+    "Risk Management & GRC"
+  ],
+  "tools": [
+    "Python", "Docker", "Linux", "Nmap", "Splunk", "Git", "Bash", "VS Code", "AWS", "Azure", "GitHub", "Windows"
+  ]
+}

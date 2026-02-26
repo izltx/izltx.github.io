@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Full dark background to eliminate white corners -->
+  <rect width="512" height="512" fill="#060c18"/>
+  <!-- Rounded inner card like original design -->
+  <rect x="16" y="16" width="480" height="480" rx="64" ry="64" fill="#0a1628"/>
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <text x="256" y="256" text-anchor="middle" dominant-baseline="central" font-family="Arial Black, Arial, Helvetica, sans-serif" font-weight="900" font-size="220" fill="#3b82f6" filter="url(#glow)">AZ</text>
+</svg>

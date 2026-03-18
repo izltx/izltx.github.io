@@ -1,17 +1,17 @@
 {
   "personal": {
     "name": "Abdulaziz Alsidrani",
-    "title": "Cybersecurity Analyst",
-    "subtitle": "Blue Team Operations | Vulnerability Management",
+    "title": "Cybersecurity Analyst | SOC Analyst",
+    "subtitle": "Threat Monitoring & Triage | Incident Response",
     "email": "az.alsidrani@gmail.com",
     "phone": "+966 552716717",
-    "location": "Riyadh Region, Saudi Arabia",
+    "location": "Riyadh Region",
     "linkedin": "https://linkedin.com/in/az-alsidrani",
     "github": "https://izltx.github.io",
     "website": "https://izltx.github.io",
     "whatsapp": "https://wa.me/966552716717"
   },
-  "summary": "Cybersecurity Analyst (CompTIA Security+) specializing in Defensive Operations and Vulnerability Management. Demonstrated capability through hands-on projects to engineer Python-based security tooling for OSINT and malware analysis. Ready to leverage strong technical foundations in log analysis, threat detection, and risk prioritization within a fast-paced environment.",
+  "summary": "Certified Cybersecurity Analyst (Security+) focused on Blue Teaming and Incident Response. Demonstrated practical understanding of SOC workflows by deploying simulated environments and configuring Splunk SIEM for log ingestion and event correlation. Leveraging strong Python skills to develop custom tooling for threat intelligence and IOC extraction, aiming to accelerate alert triage and reduce manual operational overhead.",
   "education": {
     "degree": "Bachelor's Degree in CyberSecurity",
     "university": "University of Hafr Albatin",
@@ -24,9 +24,8 @@
       "dates": "06/2025 – 08/2025",
       "location": "Riyadh",
       "bullets": [
-        "Developed a data-driven web application using HTML, JavaScript, and backend databases to process and manage user inputs.",
-        "Engineered automated data extraction and reporting functionalities, generating structured PDF and Excel outputs for administrative use.",
-        "Configured automated email notification pipelines, gaining practical exposure to web application architecture, data flow, and backend integration."
+        "Conducted comprehensive security audits on backend data flows to identify misconfigurations. Collaborated cross-functionally to validate input controls and enhance application security logging, ensuring rigorous auditing and visibility against injection attacks.",
+        "Implemented secure data extraction pipelines, maintaining data confidentiality and integrity while handling structured administrative reports."
       ]
     }
   ],
@@ -37,14 +36,14 @@
       "tags": ["Threat Detection & Alert Triage", "Log Analysis & Investigation (Splunk)", "Event Correlation Analysis", "MITRE ATT&CK Framework", "Incident Response Lifecycle"]
     },
     {
+      "category": "Security Automation & Tooling",
+      "icon": "code",
+      "tags": ["Python Automation (API Integration, Log Parsing)", "Threat Intelligence Aggregation (OSINT)", "IOC Extraction", "Static Malware Triage"]
+    },
+    {
       "category": "Vulnerability Management",
       "icon": "search",
       "tags": ["Vulnerability Assessments", "Risk Prioritization", "CVSS v3/v4 Scoring", "Patch Management Lifecycle", "OpenVAS"]
-    },
-    {
-      "category": "Security Automation & Tooling",
-      "icon": "code",
-      "tags": ["Python Scripting", "API Integration", "OSINT Data Aggregation", "Static Malware Analysis"]
     },
     {
       "category": "Governance & Systems",
@@ -54,26 +53,27 @@
   ],
   "projects": [
     {
-      "title": "Singularity",
-      "subtitle": "Malware Analysis & Threat Detection Utility",
-      "date": "12/2025",
-      "description": "A Python-based utility for automated static malware analysis, extracting specific IOCs to accelerate initial threat triage.",
+      "title": "Enterprise SOC & Incident Response Home Lab",
+      "subtitle": "Active Directory & Splunk SIEM Environment",
+      "date": "03/2026 – Present",
+      "description": "Architected a virtualized enterprise network utilizing Active Directory and configured Splunk SIEM for centralized log aggregation and proactive threat monitoring.",
       "bullets": [
-        "Engineered a Python-based utility for automated static malware analysis, extracting specific IOCs (Hashes, PE Headers) to accelerate initial threat triage.",
-        "Streamlined the static analysis process by generating structured threat signatures, significantly reducing the manual effort required to investigate suspicious artifacts."
+        "Architected a virtualized enterprise network utilizing Active Directory and configured Splunk SIEM for centralized log aggregation.",
+        "Executed adversary emulation techniques (e.g., credential access, authentication bypass) to validate SIEM detection rules, fine-tune alert thresholds, and ensure accurate telemetry generation for proactive monitoring.",
+        "Investigated security alerts utilizing Splunk Search Processing Language (SPL) to parse Windows Event Logs (e.g., Event IDs 4625, 4720), mapped threat behaviors to the MITRE ATT&CK framework, and formulated actionable containment reports."
       ],
-      "technologies": ["Python", "PE Analysis", "IOC Extraction", "Threat Intelligence"]
+      "technologies": ["Splunk SIEM", "Active Directory", "Windows Event Logs", "MITRE ATT&CK", "SPL", "Adversary Emulation"]
     },
     {
-      "title": "ArchInt",
-      "subtitle": "Threat Intelligence & OSINT Aggregator",
-      "date": "01/2026",
-      "description": "An automated Python OSINT tool integrating VirusTotal and Shodan APIs to aggregate and structure public threat intelligence.",
+      "title": "Automated Threat Intelligence & Static Analysis Tooling",
+      "subtitle": "Python OSINT & Malware Triage Utilities",
+      "date": "10/2025 – 01/2026",
+      "description": "Developed custom Python workflows to aggregate public threat intelligence and perform automated static malware analysis by extracting critical IOCs.",
       "bullets": [
-        "Developed an automated Python OSINT tool integrating VirusTotal and Shodan APIs to aggregate and structure public threat intelligence.",
-        "Parsed and formatted raw indicators into structured datasets (e.g., JSON/CSV), providing direct and readable context to support proactive threat hunting."
+        "Developed custom Python utilities integrating VirusTotal and Shodan APIs to aggregate public threat intelligence.",
+        "Engineered an automated static malware analysis pipeline via Python to extract critical IOCs (Hashes, PE Headers), significantly accelerating the initial threat triage and incident containment workflows."
       ],
-      "technologies": ["Python", "VirusTotal API", "Shodan API", "OSINT", "JSON/CSV"]
+      "technologies": ["Python", "VirusTotal API", "Shodan API", "Static Malware Analysis", "IOC Extraction"]
     },
     {
       "title": "InfraFix",
@@ -96,7 +96,7 @@
       "color": "#e74c3c"
     },
     {
-      "name": "Cybersecurity",
+      "name": "Cybersecurity Professional Certificate",
       "issuer": "IBM SkillsBuild",
       "date": "Jun 2025",
       "credlyUrl": "https://www.credly.com/badges/7ab231f5-cce2-4276-8a37-0f49304b37dc",

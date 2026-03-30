@@ -81,6 +81,12 @@
         Open to Opportunities
       </div>
       <h1 class="hero-name reveal reveal-delay-1" id="heroName"></h1>
+      
+      <p class="hero-summary reveal reveal-delay-2">
+        SOC Analyst specializing in Tier 1 operations, alert triage, and proactive threat monitoring. 
+        Equipped with an active <strong>CompTIA Security+</strong> certification to defend enterprise networks.
+      </p>
+
       <div class="hero-terminal reveal reveal-delay-2" id="heroTerminal">
         <div class="terminal-header">
           <div class="terminal-dot red"></div>
@@ -90,12 +96,13 @@
         <div id="terminalContent"></div>
       </div>
       <div class="hero-cta reveal reveal-delay-3">
-        <a href="#projects" class="btn btn-primary magnetic" id="ctaProjects">
+        <a href="Abdulaziz_Alsidrani_CV.pdf" class="btn btn-primary magnetic" target="_blank">
+          <span>Download Resume (PDF)</span>
+          <span>📄</span>
+        </a>
+        <a href="#projects" class="btn btn-secondary magnetic" id="ctaProjects">
           <span>View Projects</span>
           <span>→</span>
-        </a>
-        <a href="#contact" class="btn btn-secondary magnetic" id="ctaContact">
-          <span>Get in Touch</span>
         </a>
       </div>
       <div class="hero-stats reveal reveal-delay-4" id="heroStats"></div>
@@ -142,6 +149,153 @@
     <h2 class="section-title reveal reveal-delay-1">Featured Projects</h2>
     <p class="section-subtitle reveal reveal-delay-2">Hands-on security tools built to solve real-world challenges</p>
     <div class="projects-grid" id="projectsGrid"></div>
+  </section>
+
+  <!-- Enterprise SOC Lab Writeup Section -->
+  <section class="section" id="soc-architecture">
+    <div class="section-label reveal">Featured Lab</div>
+    <h2 class="section-title reveal reveal-delay-1">Enterprise SOC & Incident Response Architecture</h2>
+    <div class="writeup-grid">
+      <div class="writeup-content reveal reveal-delay-2">
+        <p class="section-subtitle">
+          I architected a virtualized enterprise network utilizing Active Directory to simulate real-world corporate IT environments. By engineering a <strong>Splunk SIEM</strong> integration, I established centralized log aggregation for complete network visibility and endpoint monitoring.
+        </p>
+        <p class="section-subtitle" style="margin-top: 16px;">
+          During the implementation, I executed adversary emulation techniques—focusing on credential access and authentication bypass—mapped directly to the <strong>MITRE ATT&CK</strong> framework. I then actively investigated these alerts using Splunk SPL, specifically hunting for Windows Event IDs <strong>4625</strong> (Failed Logon Attempts) and <strong>4720</strong> (User Account Created) to validate my threat detection pipelines.
+        </p>
+      </div>
+      <div class="writeup-visuals reveal reveal-delay-3">
+        
+        <!-- NATIVE ARCHITECTURE DIAGRAM -->
+        <div class="architecture-diagram">
+          <div class="diagram-flow">
+            <!-- Subnet: Attack -->
+            <div class="subnet" style="border-color: rgba(239,68,68,0.3);">
+              <div class="subnet-title" style="color:#ef4444;">VLAN 50 (External VPN)</div>
+              <div class="node node-kali">
+                <div class="node-icon">🐉</div>
+                <div class="node-name">Kali Linux (Attacker)</div>
+                <div class="node-ip">10.10.50.100</div>
+              </div>
+            </div>
+            
+            <div class="connection-arrow attack" style="margin: 24px 0;">
+              <span class="arrow-label">Brute Force / Lateral Mvt</span>
+              <div class="arrow-line"></div>
+              <div class="arrow-head"></div>
+            </div>
+            
+            <div class="node-firewall">pfSense Firewall / NAT (10.10.1.1)</div>
+
+            <div class="diagram-branches">
+              <!-- Subnet: Corporate -->
+              <div class="subnet" style="border-color: rgba(59,130,246,0.3);">
+                <div class="subnet-title" style="color:#60a5fa;">VLAN 10 (Corporate)</div>
+                <div class="node node-windows">
+                  <div class="node-icon">🪟</div>
+                  <div class="node-name">Windows Server 2022</div>
+                  <div class="node-ip">10.10.10.15</div>
+                  <div class="node-sub">Active Directory / DC<br>+ Splunk UF</div>
+                </div>
+              </div>
+
+              <!-- Forwarding Arrow -->
+              <div class="connection-arrow horizontal">
+                <span class="arrow-label">Splunk 9997 (Sysmon/WinEvent)</span>
+                <div class="arrow-line"></div>
+                <div class="arrow-head"></div>
+              </div>
+
+              <!-- Subnet: SOC -->
+              <div class="subnet" style="border-color: rgba(34,197,94,0.3);">
+                <div class="subnet-title" style="color:#4ade80;">VLAN 20 (SOC / Mgmt)</div>
+                <div class="node node-splunk">
+                  <div class="node-icon">📊</div>
+                  <div class="node-name">Splunk Enterprise</div>
+                  <div class="node-ip">10.10.20.50</div>
+                  <div class="node-sub">Indexer & Search Head</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- NATIVE SPLUNK DASHBOARD -->
+        <div class="splunk-dashboard" style="margin-top: 32px;">
+          <div class="splunk-header">
+            <span class="splunk-logo">Splunk&gt;</span>
+            <span class="splunk-app">Search & Reporting</span>
+          </div>
+          <div class="splunk-search-bar">
+            <div class="spl-query">
+              <span class="spl-keyword">index</span>=win_logs (<span class="spl-keyword">EventCode</span>=4625 OR <span class="spl-keyword">EventCode</span>=4720) 
+              | <span class="spl-keyword">stats</span> count <span class="spl-keyword">by</span> TargetUserName, src_ip, EventCode 
+              | <span class="spl-keyword">sort</span> - count
+            </div>
+            <div class="spl-search-btn">🔍</div>
+          </div>
+          <div class="splunk-results">
+            <table class="splunk-table">
+              <thead>
+                <tr><th>TargetUserName</th><th>src_ip</th><th>EventCode</th><th>count</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Administrator</td><td>10.10.50.100</td><td>4625</td><td>1,245</td></tr>
+                <tr><td>SVC_Backup</td><td>10.10.50.100</td><td>4625</td><td>432</td></tr>
+                <tr><td>admin</td><td>10.10.50.100</td><td>4625</td><td>109</td></tr>
+                <tr><td>hacker_account</td><td>10.10.50.100</td><td>4720</td><td>1</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Automated Threat Intelligence Tooling Section -->
+  <section class="section" id="threat-intel">
+    <div class="section-label reveal">Technical Methodology</div>
+    <h2 class="section-title reveal reveal-delay-1">Python-based Threat Intel & Static Analysis Engine</h2>
+    <div class="writeup-grid">
+      <div class="writeup-content reveal reveal-delay-2">
+        <p class="section-subtitle">
+          I engineered a custom Python security tool designed to safely ingest Portable Executable (PE) files using Read Binary mode without triggering execution. The engine performs deep static analysis, securely extracting Hashes (via <code>hashlib</code>) and PE Headers (via <code>pefile</code>) to uncover embedded IOCs.
+        </p>
+        <p class="section-subtitle" style="margin-top: 16px;">
+          To automate threat triage operations, the engine integrates directly with the VirusTotal and Shodan APIs using the <code>requests</code> library. This intelligent automation rapidly correlates identified hashes against global intelligence databases to accelerate the incident response lifecycle.
+        </p>
+      </div>
+      
+      <div class="code-snippets reveal reveal-delay-3">
+        <!-- Snippet 1 -->
+        <div class="code-block-wrapper">
+          <div class="code-header">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="file-name">hash_extractor.py</span>
+          </div>
+          <pre><code><span style="color: #c678dd;">import</span> hashlib
+
+<span style="color: #c678dd;">def</span> <span style="color: #61afef;">extract_sha256</span>(file_path):
+    <span style="color: #c678dd;">with</span> <span style="color: #56b6c2;">open</span>(file_path, <span style="color: #98c379;">"rb"</span>) <span style="color: #c678dd;">as</span> f:
+        <span style="color: #c678dd;">return</span> hashlib.sha256(f.read()).hexdigest()</code></pre>
+        </div>
+
+        <!-- Snippet 2 -->
+        <div class="code-block-wrapper" style="margin-top: 24px;">
+          <div class="code-header">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="file-name">vt_triage.py</span>
+          </div>
+          <pre><code><span style="color: #c678dd;">import</span> requests
+
+<span style="color: #c678dd;">def</span> <span style="color: #61afef;">query_virustotal</span>(file_hash, api_key):
+    url = <span style="color: #98c379;">f"https://www.virustotal.com/api/v3/files/</span><span style="color: #e5c07b;">{file_hash}</span><span style="color: #98c379;">"</span>
+    headers = {<span style="color: #98c379;">"x-apikey"</span>: api_key}
+    <span style="color: #c678dd;">return</span> requests.get(url, headers=headers).json()</code></pre>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Project Modal -->

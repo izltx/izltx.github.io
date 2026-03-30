@@ -49,6 +49,11 @@
       "category": "Governance & Systems",
       "icon": "lock",
       "tags": ["Security Baselines & Hardening", "Linux/Windows Security Internals", "Network Protocols"]
+    },
+    {
+      "category": "Core SOC Methodologies",
+      "icon": "shield",
+      "tags": ["Splunk SPL", "MITRE ATT&CK", "Threat Detection", "Python Automation", "Incident Response Lifecycle", "Alert Triage", "Vulnerability Mgmt (OpenVAS)"]
     }
   ],
   "projects": [
@@ -173,7 +178,7 @@
   "stats": {
     "projects": 3,
     "certifications": 11,
-    "skillAreas": 4
+    "skillAreas": 5
   },
   "coursework": [
     "Digital Forensics",

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Incident Response Report - INC-2026-0042</title>
+  <style>
+    body {
+      background-color: #f3f4f6;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      color: #1f2937;
+      margin: 0;
+      padding: 40px 20px;
+    }
+    .page {
+      background-color: #ffffff;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 50px 60px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      border-top: 8px solid #1d4ed8;
+      border-radius: 4px;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 20px;
+      margin-bottom: 30px;
+    }
+    .header-left h1 {
+      margin: 0;
+      color: #111827;
+      font-size: 24px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .header-left p {
+      margin: 5px 0 0 0;
+      color: #6b7280;
+      font-size: 14px;
+    }
+    .header-right {
+      text-align: right;
+    }
+    .status-badge {
+      display: inline-block;
+      background-color: #fee2e2;
+      color: #991b1b;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    h2 {
+      font-size: 18px;
+      color: #1e40af;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 8px;
+      margin-top: 30px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 24px;
+      font-size: 14px;
+    }
+    th, td {
+      border: 1px solid #d1d5db;
+      padding: 10px 14px;
+      text-align: left;
+    }
+    th {
+      background-color: #f9fafb;
+      color: #374151;
+      width: 30%;
+      font-weight: 600;
+    }
+    td {
+      background-color: #ffffff;
+    }
+    p {
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .timeline {
+      margin-top: 20px;
+      padding-left: 20px;
+      border-left: 2px solid #3b82f6;
+    }
+    .timeline-event {
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .timeline-event::before {
+      content: '';
+      position: absolute;
+      left: -27px;
+      top: 4px;
+      width: 12px;
+      height: 12px;
+      background-color: #3b82f6;
+      border-radius: 50%;
+    }
+    .event-time {
+      font-weight: bold;
+      color: #111827;
+      font-size: 13px;
+    }
+    .event-desc {
+      margin-top: 4px;
+      font-size: 14px;
+      color: #4b5563;
+    }
+    .print-btn {
+      display: block;
+      width: 150px;
+      margin: 0 auto 30px;
+      padding: 10px 20px;
+      background-color: #1d4ed8;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+    }
+    .print-btn:hover { background-color: #1e40af; }
+    @media print {
+      body { background-color: #ffffff; padding: 0; }
+      .page { box-shadow: none; border-top: none; padding: 0; }
+      .print-btn { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="print-btn" onclick="window.print()">🖨️ Print to PDF</button>
+
+  <div class="page">
+    <div class="header">
+      <div class="header-left">
+        <h1>Incident Response Report</h1>
+        <p>Security Operations Center (SOC)</p>
+      </div>
+      <div class="header-right">
+        <div class="status-badge">Severity: CRITICAL</div>
+        <p style="margin-top: 10px; font-size: 13px; color: #4b5563;"><strong>Ticket ID:</strong> INC-2026-0042</p>
+        <p style="margin-top: 4px; font-size: 13px; color: #4b5563;"><strong>Date:</strong> 30 MAR 2026</p>
+      </div>
+    </div>
+
+    <h2>1. Incident Overview</h2>
+    <table>
+      <tr>
+        <th>Analyst Name</th>
+        <td>Abdulaziz Alsidrani (Security Analyst)</td>
+      </tr>
+      <tr>
+        <th>Incident Type</th>
+        <td>Brute Force Attack & Unauthorized Account Creation</td>
+      </tr>
+      <tr>
+        <th>Target Asset</th>
+        <td>CORP-DC1 (Windows Server 2022 - Domain Controller) - <code>10.10.10.15</code></td>
+      </tr>
+      <tr>
+        <th>Source Threat</th>
+        <td>External IP: <code>10.10.50.100</code> (Suspected Threat Actor)</td>
+      </tr>
+    </table>
+
+    <h2>2. Executive Summary</h2>
+    <p>On March 30, 2026, the SOC received automated alerts triggered by Splunk monitoring <strong>Event ID 4625</strong> (Failed Logon Attempts). Investigation revealed a high-volume RDP brute-force attack originating from external IP <code>10.10.50.100</code> targeting the <code>Administrator</code> and <code>SVC_Backup</code> accounts. Following 1,600+ failed attempts, the actor successfully compromised the <code>SVC_Backup</code> credential. Once inside the perimeter, the attacker immediately attempted to establish persistence by creating a rogue administrative account named <code>hacker_account</code>, triggering <strong>Event ID 4720</strong>. The SOC team successfully contained the threat by terminating the session, isolating the affected machine, and blocking the ingress IP.</p>
+
+    <h2>3. Attack Timeline & Kill Chain</h2>
+    <div class="timeline">
+      <div class="timeline-event">
+        <div class="event-time">08:14:22 UTC - Reconnaissance</div>
+        <div class="event-desc">Initial port scanning detected against network edge firewall targeting RDP (Port 3389).</div>
+      </div>
+      <div class="timeline-event">
+        <div class="event-time">08:17:05 UTC - Credential Access (Brute Force)</div>
+        <div class="event-desc">Splunk SIEM flags a massive spike in <code>EventID 4625</code>. 1,245 failed attempts for <code>Administrator</code> and 432 for <code>SVC_Backup</code>.</div>
+      </div>
+      <div class="timeline-event">
+        <div class="event-time">08:29:41 UTC - Initial Access (Compromise)</div>
+        <div class="event-desc">Successful authentication logged for <code>SVC_Backup</code> (EventID 4624) from IP <code>10.10.50.100</code>. Triage confirms the service account lacked MFA enforcement.</div>
+      </div>
+      <div class="timeline-event">
+        <div class="event-time">08:31:12 UTC - Persistence & Privilege Escalation</div>
+        <div class="event-desc">Attacker executes PowerShell script to spawn a new local user. EventID 4720 triggers for TargetUserName: <code>hacker_account</code>.</div>
+      </div>
+    </div>
+
+    <h2>4. Investigation Details & IOCs (Indicators of Compromise)</h2>
+    <ul>
+      <li><strong>Malicious IPs:</strong> <code>10.10.50.100</code></li>
+      <li><strong>Compromised Accounts:</strong> <code>CORP\SVC_Backup</code></li>
+      <li><strong>Artifacts Created:</strong> <code>hacker_account</code> (SID: S-1-5-21-XXX-1002)</li>
+      <li><strong>Mitre ATT&CK Tactics:</strong> T1110.001 (Password Guessing), T1078 (Valid Accounts), T1136.001 (Local Account).</li>
+      <li><strong>Validation Splunk Query:</strong> <code>index=win_logs (EventCode=4625 OR EventCode=4720) | stats count by TargetUserName, src_ip</code></li>
+    </ul>
+
+    <h2>5. Containment & Eradication</h2>
+    <table>
+      <tr>
+        <th>Phase</th>
+        <th>Actions Taken by SOC</th>
+      </tr>
+      <tr>
+        <td><strong>Containment</strong></td>
+        <td>
+          1. Terminated active RDP session for compromised account <code>SVC_Backup</code>.<br>
+          2. Isolated <code>CORP-DC1</code> temporarily to prevent lateral movement.<br>
+          3. Implemented temporary block rule for <code>10.10.50.100</code> on edge firewall.
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Eradication</strong></td>
+        <td>
+          1. Deleted unauthorized user <code>hacker_account</code> and purged associated registry keys/profiles.<br>
+          2. Terminated all suspicious rogue processes spawned by the attacker.<br>
+          3. Conducted full EDR scan on the Domain Controller (No malware persistence found).
+        </td>
+      </tr>
+    </table>
+
+    <h2>6. Recommendations & Remediation</h2>
+    <ul>
+      <li><strong>MFA Implementation:</strong> Enforce Multi-Factor Authentication (MFA) on all external-facing RDP endpoints and critical Service Accounts.</li>
+      <li><strong>Network Perimeter Block:</strong> Permanently block the malicious external IP <code>10.10.50.100</code> at the Edge Firewall and update Threat Intel feeds.</li>
+      <li><strong>Credential Reset & Audit:</strong> Immediately force a password reset for the compromised <code>SVC_Backup</code> account and conduct a comprehensive audit of its assigned permissions across the domain.</li>
+    </ul>
+
+    <div style="margin-top: 50px; font-size: 13px; color: #6b7280; text-align: center; border-top: 1px solid #e5e7eb; padding-top: 20px;">
+      <p>Report Compiled by Security Operations Center (SOC). This document is CONFIDENTIAL.</p>
+    </div>
+  </div>
+
+</body>
+</html>

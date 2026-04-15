@@ -19,7 +19,13 @@
     AWS: '☁️',
     Azure: '🌐',
     GitHub: '🐙',
-    Windows: '🪟'
+    Windows: '🪟',
+    Ollama: '🦙',
+    'Qwen2.5': '🧠',
+    LLMs: '🤖',
+    Wireshark: '🦈',
+    'Burp Suite': '🕷️',
+    CrowdStrike: '🦅'
   };
 
   const skillIcons = {

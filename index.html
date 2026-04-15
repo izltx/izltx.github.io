@@ -150,6 +150,118 @@
     <p class="section-subtitle reveal reveal-delay-2">Hands-on security tools built to solve real-world challenges</p>
     <div class="projects-grid" id="projectsGrid"></div>
   </section>
+  <!-- AI Triage Engine Writeup Section -->
+  <section class="section" id="ai-triage">
+    <div class="section-label reveal">Featured Project</div>
+    <h2 class="section-title reveal reveal-delay-1">AI-Powered SOC Alert Triage Engine</h2>
+    <div class="writeup-grid">
+      <div class="writeup-content reveal reveal-delay-2">
+        <p class="section-subtitle">
+          I engineered a fully automated alert triage pipeline that bridges <strong>Splunk SIEM</strong> with a locally-hosted <strong>Large Language Model</strong> (Ollama qwen2.5:7b). When a security alert fires, the engine intercepts it, enriches it with contextual intelligence, and delivers a complete triage report — classification, severity, MITRE ATT&CK mapping, IOC extraction, and response recommendations — all within seconds.
+        </p>
+        <p class="section-subtitle" style="margin-top: 16px;">
+          The system operates <strong>entirely on-premises</strong>. No alert data leaves the network — a critical design decision for environments where log confidentiality is non-negotiable. The enrichment layer analyzes account privilege levels, time-of-day patterns, and historical context before prompting the LLM, fundamentally improving analysis quality over raw log ingestion.
+        </p>
+        <p class="section-subtitle" style="margin-top: 16px;">
+          Results are pushed simultaneously to <strong>Discord</strong> for real-time SOC visibility and back into <strong>Splunk HEC</strong> for dashboarding, enabling continuous feedback on detection rule efficacy and ATT&CK coverage gaps.
+        </p>
+
+        <div class="triage-stats-row" style="margin-top: 32px;">
+          <div class="triage-stat-card">
+            <div class="triage-stat-value">~30s</div>
+            <div class="triage-stat-label">Avg Triage Time</div>
+          </div>
+          <div class="triage-stat-card">
+            <div class="triage-stat-value">94%</div>
+            <div class="triage-stat-label">AI Confidence</div>
+          </div>
+          <div class="triage-stat-card">
+            <div class="triage-stat-value">5</div>
+            <div class="triage-stat-label">MITRE Techniques</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="writeup-visuals reveal reveal-delay-3">
+        <!-- AI TRIAGE PIPELINE DIAGRAM -->
+        <div class="triage-pipeline">
+          <div class="pipeline-title">Triage Pipeline Architecture</div>
+          
+          <!-- Step 1: Splunk Alert -->
+          <div class="pipeline-node pipeline-splunk">
+            <div class="pipeline-node-icon">📊</div>
+            <div class="pipeline-node-info">
+              <div class="pipeline-node-name">Splunk SIEM</div>
+              <div class="pipeline-node-desc">Alert triggers webhook</div>
+            </div>
+            <div class="pipeline-node-badge">TRIGGER</div>
+          </div>
+
+          <div class="pipeline-arrow">
+            <div class="pipeline-arrow-line"></div>
+            <div class="pipeline-arrow-label">POST /alert</div>
+          </div>
+
+          <!-- Step 2: Python Engine -->
+          <div class="pipeline-node pipeline-engine">
+            <div class="pipeline-node-icon">⚙️</div>
+            <div class="pipeline-node-info">
+              <div class="pipeline-node-name">Triage Engine</div>
+              <div class="pipeline-node-desc">Context enrichment layer</div>
+            </div>
+            <div class="pipeline-node-badge">ENRICH</div>
+          </div>
+
+          <div class="pipeline-arrow">
+            <div class="pipeline-arrow-line"></div>
+            <div class="pipeline-arrow-label">Structured Prompt</div>
+          </div>
+
+          <!-- Step 3: LLM -->
+          <div class="pipeline-node pipeline-llm">
+            <div class="pipeline-node-icon">🧠</div>
+            <div class="pipeline-node-info">
+              <div class="pipeline-node-name">Ollama LLM</div>
+              <div class="pipeline-node-desc">qwen2.5:7b — Local GPU</div>
+            </div>
+            <div class="pipeline-node-badge">ANALYZE</div>
+          </div>
+
+          <div class="pipeline-arrow">
+            <div class="pipeline-arrow-line"></div>
+            <div class="pipeline-arrow-label">JSON Response</div>
+          </div>
+
+          <!-- Step 4: Outputs -->
+          <div class="pipeline-outputs">
+            <div class="pipeline-node pipeline-discord">
+              <div class="pipeline-node-icon">💬</div>
+              <div class="pipeline-node-info">
+                <div class="pipeline-node-name">Discord</div>
+                <div class="pipeline-node-desc">Real-time alerts</div>
+              </div>
+            </div>
+            <div class="pipeline-output-divider">+</div>
+            <div class="pipeline-node pipeline-hec">
+              <div class="pipeline-node-icon">📈</div>
+              <div class="pipeline-node-info">
+                <div class="pipeline-node-name">Splunk HEC</div>
+                <div class="pipeline-node-desc">Dashboard & tracking</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Output Details -->
+          <div class="pipeline-output-tags">
+            <span class="pipeline-tag tag-red">MITRE ATT&CK</span>
+            <span class="pipeline-tag tag-yellow">IOCs</span>
+            <span class="pipeline-tag tag-green">Risk Score</span>
+            <span class="pipeline-tag tag-blue">Response Plan</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Enterprise SOC Lab Writeup Section -->
   <section class="section" id="soc-architecture">

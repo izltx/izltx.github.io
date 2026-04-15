@@ -58,6 +58,19 @@
   ],
   "projects": [
     {
+      "title": "AI-Powered SOC Alert Triage Engine",
+      "subtitle": "Automated LLM-Based Threat Analysis & Classification",
+      "date": "04/2026",
+      "description": "Engineered a fully automated alert triage pipeline that integrates Splunk SIEM with a locally-hosted LLM to classify, enrich, and respond to security alerts in under 30 seconds — with zero data leaving the network.",
+      "bullets": [
+        "Built a Python middleware engine that intercepts Splunk alerts via webhook, enriches them with contextual intelligence (account privilege level, time-of-day analysis, event patterns), and forwards structured prompts to a local Ollama LLM (qwen2.5:7b) for automated triage.",
+        "Engineered structured JSON output with automated MITRE ATT&CK mapping, IOC extraction, risk scoring (0-100), confidence levels, and actionable response recommendations — eliminating unstructured chatbot-style responses.",
+        "Integrated dual-output pipeline: real-time Discord webhook notifications for immediate SOC visibility, and Splunk HEC logging back into a dedicated ai_triage index for historical dashboarding and trend analysis.",
+        "Designed a fully on-premises architecture ensuring complete data sovereignty — no alert telemetry or log data is transmitted to external cloud services."
+      ],
+      "technologies": ["Python", "Splunk SIEM", "Ollama LLM", "MITRE ATT&CK", "Flask", "Discord Webhooks", "Splunk HEC", "Prompt Engineering"]
+    },
+    {
       "title": "Enterprise SOC & Incident Response Home Lab",
       "subtitle": "Active Directory & Splunk SIEM Environment",
       "date": "03/2026 – Present",
@@ -176,7 +189,7 @@
     { "name": "Arabic", "level": "Native" }
   ],
   "stats": {
-    "projects": 3,
+    "projects": 4,
     "certifications": 11,
     "skillAreas": 5
   },
@@ -191,6 +204,6 @@
     "Risk Management & GRC"
   ],
   "tools": [
-    "Python", "Docker", "Linux", "Nmap", "Splunk", "Git", "Bash", "VS Code", "AWS", "Azure", "GitHub", "Windows"
+    "Python", "Splunk", "Linux", "Nmap", "Ollama", "Qwen2.5", "LLMs", "Wireshark", "Burp Suite", "CrowdStrike", "Docker", "Git", "Bash", "Windows", "AWS", "Azure"
   ]
 }
